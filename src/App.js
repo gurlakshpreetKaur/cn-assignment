@@ -1,25 +1,15 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
+import IDCard from './components/IDCard';
 import './App.css';
+import { useState } from 'react';
+import MainContainerWithNav from './components/MainContainer';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [seed, setSeed] = useState("abc"); //by default, seed is abc as specified in the question
+
+  return (<MainContainerWithNav setSeed={setSeed}>
+    <IDCard page={1} result={1} seed={seed} />
+  </MainContainerWithNav>);
 }
 
 export default App;
